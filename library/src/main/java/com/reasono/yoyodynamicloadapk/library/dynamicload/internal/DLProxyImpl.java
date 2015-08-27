@@ -40,7 +40,7 @@ import java.lang.reflect.Constructor;
  * This is a plugin activity proxy, the proxy will create the plugin activity
  * with reflect, and then call the plugin activity's attach、onCreate method, at
  * this time, the plugin activity is running.
- * 
+ *
  * @author mrsimple
  */
 public class DLProxyImpl {
@@ -137,8 +137,8 @@ public class DLProxyImpl {
     protected void launchTargetActivity() {
         try {
             Class<?> localClass = getClassLoader().loadClass(mClass);
-            Constructor<?> localConstructor = localClass.getConstructor(new Class[] {});
-            Object instance = localConstructor.newInstance(new Object[] {});
+            Constructor<?> localConstructor = localClass.getConstructor(new Class[]{});
+            Object instance = localConstructor.newInstance(new Object[]{});
             mPluginActivity = (DLPlugin) instance;
             ((DLAttachable) mProxyActivity).attach(mPluginActivity, mPluginManager);
             Log.d(TAG, "instance = " + instance);

@@ -24,6 +24,6 @@ import com.reasono.yoyodynamicloadapk.library.dynamicload.DLServicePlugin;
  * @author mrsimple
  */
 public interface DLServiceAttachable {
-    
-    public void attach(DLServicePlugin remoteService, DLPluginManager pluginManager);
+
+    void attach(DLServicePlugin remoteService, DLPluginManager pluginManager);
 }

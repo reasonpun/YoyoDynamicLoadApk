@@ -30,10 +30,10 @@ public interface DLAttachable {
      * and pluginManager to the plugin activity. the proxy activity will load
      * the plugin's resource, so the proxy activity is a resource delegate for
      * plugin activity.
-     * 
+     *
      * @param proxyActivity a instance of DLPlugin, {@see DLBasePluginActivity}
-     *            and {@see DLBasePluginFragmentActivity}
+     *                      and {@see DLBasePluginFragmentActivity}
      * @param pluginManager DLPluginManager instance, manager the plugins
      */
-    public void attach(DLPlugin proxyActivity, DLPluginManager pluginManager);
+    void attach(DLPlugin proxyActivity, DLPluginManager pluginManager);
 }

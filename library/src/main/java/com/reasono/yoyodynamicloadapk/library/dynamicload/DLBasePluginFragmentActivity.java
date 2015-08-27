@@ -64,7 +64,6 @@ public class DLBasePluginFragmentActivity extends FragmentActivity implements DL
 
     @Override
     public void attach(Activity proxyActivity, DLPluginPackage pluginPackage) {
-        Log.d(TAG, "attach: proxyActivity= " + proxyActivity);
         mProxyActivity = (FragmentActivity) proxyActivity;
         that = mProxyActivity;
         mPluginPackage = pluginPackage;
@@ -82,8 +81,6 @@ public class DLBasePluginFragmentActivity extends FragmentActivity implements DL
         }
 
         mPluginManager = DLPluginManager.getInstance(that);
-        Log.d(TAG, "onCreate: from= "
-                + (mFrom == DLConstants.FROM_INTERNAL ? "DLConstants.FROM_INTERNAL" : "FROM_EXTERNAL"));
     }
 
     @Override
@@ -358,7 +355,7 @@ public class DLBasePluginFragmentActivity extends FragmentActivity implements DL
     /**
      * @param dlIntent
      * @return may be {@link #START_RESULT_SUCCESS}, {@link #START_RESULT_NO_PKG},
-     *         {@link #START_RESULT_NO_CLASS}, {@link #START_RESULT_TYPE_ERROR}
+     * {@link #START_RESULT_NO_CLASS}, {@link #START_RESULT_TYPE_ERROR}
      */
     public int startPluginActivity(DLIntent dlIntent) {
         return startPluginActivityForResult(dlIntent, -1);
@@ -367,7 +364,7 @@ public class DLBasePluginFragmentActivity extends FragmentActivity implements DL
     /**
      * @param dlIntent
      * @return may be {@link #START_RESULT_SUCCESS}, {@link #START_RESULT_NO_PKG},
-     *         {@link #START_RESULT_NO_CLASS}, {@link #START_RESULT_TYPE_ERROR}
+     * {@link #START_RESULT_NO_CLASS}, {@link #START_RESULT_TYPE_ERROR}
      */
     public int startPluginActivityForResult(DLIntent dlIntent, int requestCode) {
         if (mFrom == DLConstants.FROM_EXTERNAL) {
@@ -377,7 +374,7 @@ public class DLBasePluginFragmentActivity extends FragmentActivity implements DL
         }
         return mPluginManager.startPluginActivityForResult(that, dlIntent, requestCode);
     }
-    
+
     public int startPluginService(DLIntent dlIntent) {
         if (mFrom == DLConstants.FROM_EXTERNAL) {
             if (dlIntent.getPluginPackage() == null) {
@@ -386,7 +383,7 @@ public class DLBasePluginFragmentActivity extends FragmentActivity implements DL
         }
         return mPluginManager.startPluginService(that, dlIntent);
     }
-    
+
     public int stopPluginService(DLIntent dlIntent) {
         if (mFrom == DLConstants.FROM_EXTERNAL) {
             if (dlIntent.getPluginPackage() == null) {
@@ -395,7 +392,7 @@ public class DLBasePluginFragmentActivity extends FragmentActivity implements DL
         }
         return mPluginManager.stopPluginService(that, dlIntent);
     }
-    
+
     public int bindPluginService(DLIntent dlIntent, ServiceConnection conn, int flags) {
         if (mFrom == DLConstants.FROM_EXTERNAL) {
             if (dlIntent.getPluginPackage() == null) {
@@ -404,11 +401,11 @@ public class DLBasePluginFragmentActivity extends FragmentActivity implements DL
         }
         return mPluginManager.bindPluginService(that, dlIntent, conn, flags);
     }
-    
+
     public int unBindPluginService(DLIntent dlIntent, ServiceConnection conn) {
         if (mFrom == DLConstants.FROM_EXTERNAL) {
             if (dlIntent.getPluginPackage() == null)
-            dlIntent.setPluginPackage(mPluginPackage.packageName);
+                dlIntent.setPluginPackage(mPluginPackage.packageName);
         }
         return mPluginManager.unBindPluginService(that, dlIntent, conn);
     }

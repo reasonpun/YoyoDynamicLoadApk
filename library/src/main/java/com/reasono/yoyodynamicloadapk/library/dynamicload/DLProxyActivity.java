@@ -172,7 +172,7 @@ public class DLProxyActivity extends Activity implements DLAttachable {
         mRemoteActivity.onOptionsItemSelected(item);
         return super.onOptionsItemSelected(item);
     }
-    
+
     @Override
     public ComponentName startService(Intent service) {
         return super.startService(service);

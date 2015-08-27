@@ -24,12 +24,12 @@ import android.os.Build;
 
 /**
  * persistence data
- * 
+ *
  * @author yuanzeyao <br/>
  *         create at 2014年12月11日 下午5:55:59
  */
 public class DLConfigs {
-    
+
     public static final boolean LOG = true;
 
     public static ClassLoader sPluginClassloader = DLConstants.class.getClassLoader();

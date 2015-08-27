@@ -104,7 +104,7 @@ public class DLPluginManager {
     /**
      * Load a apk. Before start a plugin Activity, we should do this first.<br/>
      * NOTE : will only be called by host apk.
-     * 
+     *
      * @param dexPath
      */
     public DLPluginPackage loadApk(String dexPath) {
@@ -114,10 +114,8 @@ public class DLPluginManager {
     }
 
     /**
-     * @param dexPath
-     *            plugin path
-     * @param hasSoLib
-     *            whether exist so lib in plugin
+     * @param dexPath  plugin path
+     * @param hasSoLib whether exist so lib in plugin
      * @return
      */
     public DLPluginPackage loadApk(final String dexPath, boolean hasSoLib) {
@@ -139,7 +137,7 @@ public class DLPluginManager {
 
     /**
      * prepare plugin runtime env, has DexClassLoader, Resources, and so on.
-     * 
+     *
      * @param packageInfo
      * @param dexPath
      * @return
@@ -193,7 +191,7 @@ public class DLPluginManager {
 
     /**
      * copy .so file to pluginlib dir.
-     * 
+     *
      * @param dexPath
      * @param hasSoLib
      */
@@ -221,8 +219,8 @@ public class DLPluginManager {
      * @param dlIntent
      * @param requestCode
      * @return One of below: {@link #START_RESULT_SUCCESS}
-     *         {@link #START_RESULT_NO_PKG} {@link #START_RESULT_NO_CLASS}
-     *         {@link #START_RESULT_TYPE_ERROR}
+     * {@link #START_RESULT_NO_PKG} {@link #START_RESULT_NO_CLASS}
+     * {@link #START_RESULT_TYPE_ERROR}
      */
     @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
     public int startPluginActivityForResult(Context context, DLIntent dlIntent, int requestCode) {
@@ -282,17 +280,17 @@ public class DLPluginManager {
                 mResult = result;
             }
         });
-        
+
         return mResult;
     }
-    
+
     public int stopPluginService(final Context context, final DLIntent dlIntent) {
         if (mFrom == DLConstants.FROM_INTERNAL) {
             dlIntent.setClassName(context, dlIntent.getPluginClass());
             context.stopService(dlIntent);
             return DLPluginManager.START_RESULT_SUCCESS;
         }
-        
+
         fetchProxyServiceClass(dlIntent, new OnFetchProxyServiceClass() {
             @Override
             public void onFetch(int result, Class<? extends Service> proxyServiceClass) {
@@ -305,12 +303,12 @@ public class DLPluginManager {
                 mResult = result;
             }
         });
-        
+
         return mResult;
     }
 
     public int bindPluginService(final Context context, final DLIntent dlIntent, final ServiceConnection conn,
-            final int flags) {
+                                 final int flags) {
         if (mFrom == DLConstants.FROM_INTERNAL) {
             dlIntent.setClassName(context, dlIntent.getPluginClass());
             context.bindService(dlIntent, conn, flags);
@@ -322,7 +320,7 @@ public class DLPluginManager {
             public void onFetch(int result, Class<? extends Service> proxyServiceClass) {
                 // TODO Auto-generated method stub
                 if (result == START_RESULT_SUCCESS) {
-			        dlIntent.setClass(context, proxyServiceClass);
+                    dlIntent.setClass(context, proxyServiceClass);
                     // Bind代理Service
                     context.bindService(dlIntent, conn, flags);
                 }
@@ -356,6 +354,7 @@ public class DLPluginManager {
 
     /**
      * 获取代理ServiceClass
+     *
      * @param dlIntent
      * @param fetchProxyServiceClass
      */
@@ -414,9 +413,8 @@ public class DLPluginManager {
     /**
      * get the proxy activity class, the proxy activity will delegate the plugin
      * activity
-     * 
-     * @param clazz
-     *            target activity's class
+     *
+     * @param clazz target activity's class
      * @return
      */
     private Class<? extends Activity> getProxyActivityClass(Class<?> clazz) {

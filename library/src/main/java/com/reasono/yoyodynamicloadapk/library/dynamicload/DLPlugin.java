@@ -30,23 +30,41 @@ import com.reasono.yoyodynamicloadapk.library.dynamicload.internal.DLPluginPacka
 
 public interface DLPlugin {
 
-    public void onCreate(Bundle savedInstanceState);
-    public void onStart();
-    public void onRestart();
-    public void onActivityResult(int requestCode, int resultCode, Intent data);
-    public void onResume();
-    public void onPause();
-    public void onStop();
-    public void onDestroy();
-    public void attach(Activity proxyActivity, DLPluginPackage pluginPackage);
-    public void onSaveInstanceState(Bundle outState);
-    public void onNewIntent(Intent intent);
-    public void onRestoreInstanceState(Bundle savedInstanceState);
-    public boolean onTouchEvent(MotionEvent event);
-    public boolean onKeyUp(int keyCode, KeyEvent event);
-    public void onWindowAttributesChanged(LayoutParams params);
-    public void onWindowFocusChanged(boolean hasFocus);
-    public void onBackPressed();
-    public boolean onCreateOptionsMenu(Menu menu);
-    public boolean onOptionsItemSelected(MenuItem item);
+    void onCreate(Bundle savedInstanceState);
+
+    void onStart();
+
+    void onRestart();
+
+    void onActivityResult(int requestCode, int resultCode, Intent data);
+
+    void onResume();
+
+    void onPause();
+
+    void onStop();
+
+    void onDestroy();
+
+    void attach(Activity proxyActivity, DLPluginPackage pluginPackage);
+
+    void onSaveInstanceState(Bundle outState);
+
+    void onNewIntent(Intent intent);
+
+    void onRestoreInstanceState(Bundle savedInstanceState);
+
+    boolean onTouchEvent(MotionEvent event);
+
+    boolean onKeyUp(int keyCode, KeyEvent event);
+
+    void onWindowAttributesChanged(LayoutParams params);
+
+    void onWindowFocusChanged(boolean hasFocus);
+
+    void onBackPressed();
+
+    boolean onCreateOptionsMenu(Menu menu);
+
+    boolean onOptionsItemSelected(MenuItem item);
 }

@@ -34,11 +34,11 @@ public class DLBasePluginService extends Service implements DLServicePlugin {
     private DLPluginPackage mPluginPackage;
     protected Service that = this;
     protected int mFrom = DLConstants.FROM_INTERNAL;
-    
+
     protected boolean isInternalCall() {
         return mFrom == DLConstants.FROM_INTERNAL;
     }
-    
+
     @Override
     public IBinder onBind(Intent intent) {
         // TODO Auto-generated method stub
@@ -81,7 +81,7 @@ public class DLBasePluginService extends Service implements DLServicePlugin {
     public void onTrimMemory(int level) {
         // TODO Auto-generated method stub
         LOG.d(TAG, TAG + " onTrimMemory");
-        
+
     }
 
     @Override

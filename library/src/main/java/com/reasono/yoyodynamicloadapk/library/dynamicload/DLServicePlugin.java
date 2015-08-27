@@ -10,27 +10,27 @@ import com.reasono.yoyodynamicloadapk.library.dynamicload.internal.DLPluginPacka
 
 public interface DLServicePlugin {
 
-    public void onCreate(); 
+    public void onCreate();
 
-    public void onStart(Intent intent, int startId); 
-    
+    public void onStart(Intent intent, int startId);
+
     public int onStartCommand(Intent intent, int flags, int startId);
-    
+
     public void onDestroy();
-    
-    public void onConfigurationChanged(Configuration newConfig); 
-    
+
+    public void onConfigurationChanged(Configuration newConfig);
+
     public void onLowMemory();
-    
+
     public void onTrimMemory(int level);
-    
+
     public IBinder onBind(Intent intent);
-    
+
     public boolean onUnbind(Intent intent);
-    
+
     public void onRebind(Intent intent);
-    
-    public void onTaskRemoved(Intent rootIntent); 
-    
+
+    public void onTaskRemoved(Intent rootIntent);
+
     public void attach(Service proxyService, DLPluginPackage pluginPackage);
 }
