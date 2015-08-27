@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/YoyoDynamicLoadApk.iml" filepath="$PROJECT_DIR$/YoyoDynamicLoadApk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/host/host.iml" filepath="$PROJECT_DIR$/host/host.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugin-a/plugin-a.iml" filepath="$PROJECT_DIR$/plugin-a/plugin-a.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugin-b/plugin-b.iml" filepath="$PROJECT_DIR$/plugin-b/plugin-b.iml" />
+    </modules>
+  </component>
+</project>
